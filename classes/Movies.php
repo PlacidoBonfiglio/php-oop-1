@@ -4,10 +4,10 @@
 class Movie {
 
     // proprietà che servono per assegnare un valore 
-    public $name;
-    public $length;
-    public $genre;
-    public $vote;
+    protected $name;
+    protected $length;
+    protected $genre;
+    protected $vote;
 
     // creo una funzione che assegna agli argomenti name, length e voto
     function __construct(
@@ -21,6 +21,23 @@ class Movie {
         $this->genre = "$_genre";
         $this->vote = $_vote;
     }
+
+    // funzioni che mi permettono di prendere il volore delle proprietà e all'occorrenza stamparli in pagina
+    public function getName() : string {
+        return $this->name;
+    }
+
+    public function getMovieLength() : string {
+        return $this->length;
+    }
+
+    public function getGenre() : string {
+        return $this->genre;
+    }
+
+    public function getVote() : int {
+        return $this->vote;
+    }
 }
 
 // Creo un oggetto di tipo "Movie" con propietà name, length e voto
@@ -31,10 +48,5 @@ $furiosa = new Movie("Furiosa: A Mad Max Saga", "2h 28m", "Action", 7);
 $ilPianetaDelTesoro = new Movie("Il Pianeta del tesoro", "1h 35m", "Adventure", 8);
 
 $LeFollieDellImperatore = new Movie("Le Follie dell'Imperatore", "1h 18m", "Adventure", 8);
-
-var_dump($theRing);
-var_dump($furiosa);
-var_dump($ilPianetaDelTesoro);
-var_dump($LeFollieDellImperatore);
 
 ?>
